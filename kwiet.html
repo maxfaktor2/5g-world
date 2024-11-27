@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+
+
+<!-- Mirrored from world-5g.web.app/kwiet.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Nov 2024 13:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">سجل لتربح</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sweetalert.min.css">
+    <script src="sweetalert.min.js"></script>
+    <style>
+        body {
+            background: rgb(179, 224, 247);
+            background: -moz-radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            background: -webkit-radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            background: radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="language-switcher">
+        <button id="lang-switch">التبديل إلى الإنجليزية</button>
+    </div>
+    <section class="main">
+        <div class="container">
+            <div class="img">
+                <img class="flag" id="flag" src="imgs/%d8%a7%d9%84%d9%83%d9%88%d9%8a%d8%aa.png" alt="">
+            </div>
+            <div class="choice-1">
+                <div class="select-container">
+                    <select id="service-provider2" title="name">
+                        <option value="om">عمان</option>
+                        <option value="uae">الإمارات</option>
+                        <option value="kuwait">الكويت</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="choice-1">
+                <div class="select-container">
+                    <select id="service-provider" title="name">
+                        <option value="provider">مزود الخدمة</option>
+                        <option value="zain">زين</option>
+                        <option value="omantel">عمانتل</option>
+                        <option value="ooredoo">أوريدو</option>
+                        <option value="stc">STC</option>
+                        <option value="viva">فيفا</option>
+                        <option value="data">بيانات</option>
+                        <option value="kems">KEMS</option>
+                        <option value="mobicom">موبايكوم</option>
+                        <option value="du">دو</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="choice-1">
+                <input type="button" id="submit-btn" value="تسجيل">
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js" defer=""></script>
+
+    <script defer="">
+        const translations = {
+            en: {
+                title: "Kuwait",
+                serviceProvider: "Service Provider",
+                submitButton: "Next Step",
+                switchButton: "AR",
+                countries: {
+                    om: "Oman",
+                    uae: "UAE",
+                    kuwait: "Kuwait"
+                },
+                options: {
+                    provider: "Service Provider",
+                    zain: "Zain",
+                    omantel: "Omantel",
+                    ooredoo: "Ooredoo",
+                    stc: "STC",
+                    viva: "Viva",
+                    data: "Data",
+                    kems: "KEMS",
+                    mobicom: "Mobicom",
+                    du: "Du"
+                }
+            },
+            ar: {
+                title: "الكويت",
+                serviceProvider: "مزود الخدمة",
+                submitButton: "تسجيل",
+                switchButton: "EN",
+                countries: {
+                    om: "عمان",
+                    uae: "الإمارات",
+                    kuwait: "الكويت"
+                },
+                options: {
+                    provider: "مزود الخدمة",
+                    zain: "زين",
+                    omantel: "عمانتل",
+                    ooredoo: "أوريدو",
+                    stc: "STC",
+                    viva: "فيفا",
+                    data: "بيانات",
+                    kems: "KEMS",
+                    mobicom: "موبايكوم",
+                    du: "دو"
+                }
+            }
+        };
+
+        let currentLang = 'ar'; // اللغة الافتراضية
+
+        // تبديل اللغة
+        document.getElementById('lang-switch').addEventListener('click', function () {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            translatePage();
+        });
+
+        function translatePage() {
+            const lang = translations[currentLang];
+
+            // تحديث النصوص على الصفحة
+            document.title = lang.title; // تحديث عنوان الصفحة
+            document.getElementById('page-title').innerText = lang.title; // تحديث عنوان القسم
+            document.getElementById('service-provider2').options[0].innerText = lang.countries.om;
+            document.getElementById('service-provider2').options[1].innerText = lang.countries.uae;
+            document.getElementById('service-provider2').options[2].innerText = lang.countries.kuwait;
+
+            document.getElementById('service-provider').options[0].innerText = lang.options.provider;
+            document.getElementById('service-provider').options[1].innerText = lang.options.zain;
+            document.getElementById('service-provider').options[2].innerText = lang.options.omantel;
+            document.getElementById('service-provider').options[3].innerText = lang.options.ooredoo;
+            document.getElementById('service-provider').options[4].innerText = lang.options.stc;
+            document.getElementById('service-provider').options[5].innerText = lang.options.viva;
+            document.getElementById('service-provider').options[6].innerText = lang.options.data;
+            document.getElementById('service-provider').options[7].innerText = lang.options.kems;
+            document.getElementById('service-provider').options[8].innerText = lang.options.mobicom;
+            document.getElementById('service-provider').options[9].innerText = lang.options.du;
+
+            document.getElementById('submit-btn').value = lang.submitButton;
+            document.getElementById('lang-switch').innerText = lang.switchButton;
+        }
+
+        // استدعاء الدالة لترجمة الصفحة بناءً على اللغة الافتراضية
+        translatePage();
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+
+<!-- Mirrored from world-5g.web.app/kwiet.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Nov 2024 13:47:33 GMT -->
+</html>

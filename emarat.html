@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from world-5g.web.app/emarat.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Nov 2024 13:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل لتربح</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sweetalert.min.css">
+    <script src="sweetalert.min.js"></script>
+    <style>
+        body {
+            background: rgb(179, 224, 247);
+            background: -moz-radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            background: -webkit-radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            background: radial-gradient(circle, rgba(179, 224, 247, 1) 0%, rgba(65, 181, 242, 1) 79%);
+            height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="language-switcher">
+        <button id="lang-switch">التبديل إلى الإنجليزية</button>
+    </div>
+    <section class="main">
+        <div class="container">
+            <div class="img">
+                <img class="flag" id="flag" src="imgs/%d8%a7%d9%85%d8%a7%d8%b1%d8%a7%d8%aa.png" alt="">
+            </div>
+            <div class="choice-1">
+                <div class="select-container">
+                    <select id="service-provider2" title="name">
+                        <option value="om">عمان</option>
+                        <option value="uae">الإمارات</option>
+                        <option value="kuwait">الكويت</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="choice-1">
+                <div class="select-container">
+                    <select id="service-provider" title="name">
+                        <option value="">مزود الخدمة</option>
+                        <option value="etisalat">اتصالات</option>
+                        <option value="du">دو</option>
+                        <option value="osn">OSN</option>
+                        <option value="adnoc">أدنوك</option>
+                        <option value="etisalat-digital">اتصالات الرقمية</option>
+                        <option value="noon">نون</option>
+                        <option value="sharaf-telecom">شرف للاتصالات</option>
+                        <option value="yalla">يلا</option>
+                        <option value="etisalat-telecom">اتصالات تليكوم</option>
+                        <option value="etisalat-uae">اتصالات الإمارات</option>
+                        <option value="bahrain-telecom">بتلكو</option>
+                        <option value="awael">أوايل</option>
+                        <option value="fasttelco">فاست تليكوم</option>
+                        <option value="du-home">دو هوم</option>
+                        <option value="alamoon">المون</option>
+                        <option value="mobicom">موبايكوم</option>
+                        <option value="etisalat-4g">اتصالات 4G</option>
+                        <option value="osn-home">OSN هوم</option>
+                    </select>
+                </div>
+            </div>
+          
+            <div class="choice-1">
+                <input type="button" id="submit-btn" value="تسجيل">
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js" defer=""></script>
+
+    <script defer="">
+        const translations = {
+            en: {
+                title: "UAE",
+                serviceProvider: "Service Provider",
+                submitButton: "Next Step",
+                switchButton: "AR",
+                countries: {
+                    om: "Oman",
+                    uae: "UAE",
+                    kuwait: "Kuwait"
+                },
+                options: {
+                    provider: "Service Provider",
+                    etisalat: "Etisalat",
+                    du: "Du",
+                    osn: "OSN",
+                    adnoc: "ADNOC",
+                    etisalatDigital: "Etisalat Digital",
+                    noon: "Noon",
+                    sharafTelecom: "Sharaf Telecom",
+                    yalla: "Yalla",
+                    etisalatTelecom: "Etisalat Telecom",
+                    etisalatUae: "Etisalat UAE",
+                    batelco: "Batelco",
+                    awael: "Awael",
+                    fasttelco: "Fasttelco",
+                    duHome: "Du Home",
+                    alamoon: "Alamoon",
+                    mobicom: "Mobicom",
+                    etisalat4g: "Etisalat 4G",
+                    osnHome: "OSN Home"
+                }
+            },
+            ar: {
+                title: "الإمارات",
+                serviceProvider: "مزود الخدمة",
+                submitButton: "تسجيل",
+                switchButton: "EN",
+                countries: {
+                    om: "عمان",
+                    uae: "الإمارات",
+                    kuwait: "الكويت"
+                },
+                options: {
+                    provider: "مزود الخدمة",
+                    etisalat: "اتصالات",
+                    du: "دو",
+                    osn: "OSN",
+                    adnoc: "أدنوك",
+                    etisalatDigital: "اتصالات الرقمية",
+                    noon: "نون",
+                    sharafTelecom: "شرف للاتصالات",
+                    yalla: "يلا",
+                    etisalatTelecom: "اتصالات تليكوم",
+                    etisalatUae: "اتصالات الإمارات",
+                    batelco: "بتلكو",
+                    awael: "أوايل",
+                    fasttelco: "فاست تليكوم",
+                    duHome: "دو هوم",
+                    alamoon: "المون",
+                    mobicom: "موبايكوم",
+                    etisalat4g: "اتصالات 4G",
+                    osnHome: "OSN هوم"
+                }
+            }
+        };
+
+        let currentLang = 'ar'; // اللغة الافتراضية
+
+        // تبديل اللغة
+        document.getElementById('lang-switch').addEventListener('click', function () {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            translatePage();
+        });
+
+        function translatePage() {
+            const lang = translations[currentLang];
+
+            // تحديث النصوص على الصفحة
+            document.getElementById('service-provider').options[0].innerText = lang.options.provider;
+            document.getElementById('service-provider').options[1].innerText = lang.options.etisalat;
+            document.getElementById('service-provider').options[2].innerText = lang.options.du;
+            document.getElementById('service-provider').options[3].innerText = lang.options.osn;
+            document.getElementById('service-provider').options[4].innerText = lang.options.adnoc;
+            document.getElementById('submit-btn').value = lang.submitButton;
+            document.getElementById('lang-switch').innerText = lang.switchButton;
+
+            // تحديث الخيارات في قائمة الدول
+            document.getElementById('service-provider2').options[0].innerText = lang.countries.om;
+            document.getElementById('service-provider2').options[1].innerText = lang.countries.uae;
+            document.getElementById('service-provider2').options[2].innerText = lang.countries.kuwait;
+
+            // تحديث الخيارات في قائمة مزودي الخدمة
+            const options = document.getElementById('service-provider').options;
+            for (let i = 1; i < options.length; i++) {
+                const optionKey = Object.keys(lang.options)[i - 1];
+                options[i].innerText = lang.options[optionKey];
+            }
+        }
+
+        // استدعاء الدالة لترجمة الصفحة بناءً على اللغة الافتراضية
+        translatePage();
+    </script>
+</body>
+
+
+<!-- Mirrored from world-5g.web.app/emarat.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Nov 2024 13:47:32 GMT -->
+</html>
